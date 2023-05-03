@@ -1,14 +1,20 @@
 import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
+   
+  
+   
+  
     const [accepted, setAccepted] = useState(false);
-
+    const [error, setError] = useState(null);
     const handleRegister = event => {
         event.preventDefault();
         const form = event.target;
@@ -16,12 +22,19 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-
+        if (password.length < 6) {
+            setError("Password should be at least 6 characters long.");
+            return;
+          }
+       
         console.log(name, photo, email, password)
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
+                navigate("/login");
+                logOut();
+                updateUserData(result.user, name, photo);
             })
             .catch(error => {
                 console.log(error);
@@ -31,7 +44,19 @@ const Register = () => {
     const handleAccepted = event =>{
         setAccepted(event.target.checked)
     }
-
+    const updateUserData = (user, name, photo) => {
+        updateProfile(user, {
+            displayName: name,
+            photoURL : photo
+        })
+            .then(() => {
+                console.log('user name updated')
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+    }
+  
     return (
         <Container className='w-25 mx-auto'>
             <h3>Please Register</h3>
@@ -72,7 +97,7 @@ const Register = () => {
 
                 </Form.Text>
                 <Form.Text className="text-danger">
-
+                    {error && <p>{error}</p>}
                 </Form.Text>
             </Form>
         </Container>

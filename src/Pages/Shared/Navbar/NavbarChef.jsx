@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
-import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
+import React, { useContext, useEffect } from 'react';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { AuthContext } from '../../../provider/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { onAuthStateChanged } from 'firebase/auth';
 
 const NavbarChef = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -14,7 +15,7 @@ const NavbarChef = () => {
   }
 
     return (
-      <div>
+      <div className='position-relative'>
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
         
@@ -27,18 +28,18 @@ const NavbarChef = () => {
             <Nav.Link href='/blog'>Blog</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link >
+            <div className='ms-5 position-relative'>
             {
-                                user && <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
+               user &&  <img className='w-25 rounded img-thumbnail img-fluid  rounded float-end rounded-circle' src={user.photoURL}  />
                             }
 
                             {user ?
-                                <Button onClick={handleLogOut} variant="secondary">Logout</Button> :
+                                <Button className='float-end' onClick={handleLogOut} variant="secondary">Logout</Button> :
                                 <Link to="/login">
                                     <Button variant="secondary">Login</Button>
                                 </Link>
                             }
-            </Nav.Link>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>
