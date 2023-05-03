@@ -33,7 +33,7 @@ const NavbarChef = () => {
                             }
 
                             {user ?
-                                <Button className='ms-2' onClick={handleLogOut} variant="secondary">Logout</Button> :
+                                <Button onClick={handleLogOut} variant="secondary">Logout</Button> :
                                 <Link to="/login">
                                     <Button variant="secondary">Login</Button>
                                 </Link>

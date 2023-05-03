@@ -1,15 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import SocialLoginBtn from '../SocialLoginBtn/SocialLoginBtn';
+
 
 const Login = () => {
+  
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     console.log('login page location', location)
-    const from = location.state?.from?.pathname || '/viewRecipes'
-
+    const from = location.state?.from?.pathname || '/'
+    const [error, setError] = useState(null);
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -23,20 +26,17 @@ const Login = () => {
                 console.log(loggedUser);
                 navigate(from, { replace: true })
             })
-            .catch(error => {
-                console.log(error);
-            })
+            .catch((error) => {
+                setError(error.message);
+              });
     }
-    const handleLoginGoogle = () => {
-        // handle Google login here
-      }
-    
-      const handleLoginGithub = () => {
-        // handle Github login here
-      }
+   
     
 
     return (
+        <div>
+            
+            
         <Container className='w-25 mx-auto'>
             <h3>Please Login</h3>
             <Form onSubmit={handleLogin}>
@@ -54,14 +54,11 @@ const Login = () => {
                     Login
                 </Button>
                 <br />
+                <Form.Text className="text-danger">
+                {error && <p>{error}</p>}
+                </Form.Text>
                 <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
-        <Button variant="secondary" onClick={handleLoginGoogle}>
-          Login with Google
-        </Button>
-
-        <Button variant="secondary" onClick={handleLoginGithub} style={{ marginTop: '10px' }}>
-          Login with Github
-        </Button>
+      
       </div>
                 <Form.Text className="text-secondary">
                     Don't Have an Account? <Link to="/register">Register</Link>
@@ -69,12 +66,13 @@ const Login = () => {
                 <Form.Text className="text-success">
 
                 </Form.Text>
-                <Form.Text className="text-danger">
-
-                </Form.Text>
-                
+              
+                <SocialLoginBtn></SocialLoginBtn>
             </Form>
+         
         </Container>
+        </div>
+
     );
 };
 

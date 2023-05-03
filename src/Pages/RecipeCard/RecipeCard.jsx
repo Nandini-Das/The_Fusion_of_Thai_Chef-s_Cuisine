@@ -1,28 +1,28 @@
-import React from 'react';
-import {FaBookmark} from "react-icons/fa";
+import React, { useState } from 'react';
+
 import { FcLike } from "react-icons/fc";
+
+import 'react-toastify/dist/ReactToastify.css';
+import FavouriteButton from '../FavouriteButton';
 const RecipeCard = ({recipeAll}) => {
-   console.log(recipeAll)
+
+ 
     return (
         <div className='row row-cols-1 row-cols-md-3 g-4'>
             
          {
            recipeAll?
            recipeAll.map(recipe =>
-            <div class="col">
-            <div class="card">
+            <div className="col">
+            <div className="card">
               <img src={recipe.recipe_img} alt="" srcset="" />
-              <div class="card-body">
-                <h5 class="card-title">{recipe.recipe_name}</h5>
-                <p class="card-text">Ingredients: {recipe.ingredients}</p>
-                <p>Cooking method : {recipe.cooking_method} </p>
-                <p> <FcLike></FcLike> Ratings: {recipe.rating}</p>
-                <div className='text-center p-2'>
-                
-                <p className='btn btn-light'><FaBookmark></FaBookmark>  Add to Favourite</p>
-
-                </div>
-                
+              <div className="card-body">
+                <h3 className="card-title">{recipe.recipe_name}</h3>
+                <p className="card-text"> <span className='text-decoration-underline'> Ingredients : </span> {recipe.ingredients}</p>
+                <p className='card-text'> <span className='text-decoration-underline'> Cooking method :</span> {recipe.cooking_method} </p>
+                <p className=''> <FcLike></FcLike> Ratings: {recipe.rating}</p>
+              
+                <FavouriteButton recipe ={recipe}></FavouriteButton>
                 <p></p>
               </div>
             </div>
