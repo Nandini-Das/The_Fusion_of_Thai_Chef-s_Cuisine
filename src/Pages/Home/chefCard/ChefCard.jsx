@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ChefCard = ({c}) => {
- 
+   
     return (
         
            
@@ -14,7 +15,7 @@ const ChefCard = ({c}) => {
          <p className='text-secondary'>Numbers of recipes: {c.number_of_recipes}</p>
          <p className='text-secondary'>Likes: {c.likes}</p>
          <div className='text-center'>
-         <button className='btn btn-info text-white mx-auto'>View Recipe</button>
+         <button className='btn btn-info text-white mx-auto'><Link to={`/viewRecipes/${c.id}`} > View Recipes</Link></button>
          </div>
           
       </div>
