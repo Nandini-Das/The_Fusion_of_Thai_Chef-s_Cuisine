@@ -3,7 +3,7 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { AuthContext } from '../../../provider/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { onAuthStateChanged } from 'firebase/auth';
+
 
 const NavbarChef = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -30,11 +30,12 @@ const NavbarChef = () => {
           <Nav>
             <div className='ms-5 position-relative'>
             {
-               user &&  <img className='w-25 rounded img-thumbnail img-fluid  rounded float-end rounded-circle' src={user.photoURL}  />
+               user &&  <img className='w-25 rounded img-thumbnail img-fluid  rounded float-end rounded-circle' src={user.photoURL}   alt="Profile"
+               title={user.displayName}/>
                             }
 
                             {user ?
-                                <Button className='float-end' onClick={handleLogOut} variant="secondary">Logout</Button> :
+                                <Button className='float-end mt-5 me-2' onClick={handleLogOut} variant="secondary">Logout</Button> :
                                 <Link to="/login">
                                     <Button variant="secondary">Login</Button>
                                 </Link>

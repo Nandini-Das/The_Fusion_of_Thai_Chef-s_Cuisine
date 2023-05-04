@@ -7,11 +7,12 @@ import {
 import Main from "../layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import About from "../Pages/About/About";
-import Blog from "../layout/Blog/Blog";
+
 import ChefRecipe from "../Pages/Home/chefRecipe/chefRecipe";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import Blog from "../Pages/Blog/Blog";
 
 
 
