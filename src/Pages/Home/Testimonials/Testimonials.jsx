@@ -4,8 +4,8 @@ import Accordion from 'react-bootstrap/Accordion';
 import { FaUserCircle } from 'react-icons/fa';
 const Testimonials = () => {
     return (
-        <div>
-            <h3 className='text-center'>Customer Testimonials</h3>
+        <div className='m-5 '>
+            <h3 className='text-center p-4'>Customer Testimonials</h3>
             <Accordion defaultActiveKey="0">
       <Accordion.Item eventKey="0">
         <Accordion.Header><FaUserCircle></FaUserCircle>  <span className='ms-2 text-success'> Lara Smith(Food Critic)</span> </Accordion.Header>

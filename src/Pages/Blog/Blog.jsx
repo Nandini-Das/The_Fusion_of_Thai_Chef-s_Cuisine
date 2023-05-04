@@ -62,7 +62,7 @@ function App() {
   return (
     <div>
         <div className="d-flex justify-content-around">
-        <h5 className=" text-dark text-center p-2">React based Query and Informations</h5>
+        <h5 className=" text-dark text-center p-2 mt-3">React based Query and Informations</h5>
        <Pdf targetRef={pdfRef} filename="blog.pdf">
         {({ toPdf }) => <button className="btn btn-danger float-end" onClick={toPdf}>Download Pdf</button>}
       </Pdf>

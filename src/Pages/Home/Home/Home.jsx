@@ -62,6 +62,8 @@ const Home = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+
+    <Services></Services>
             <h3 className='text-center mt-5 p-3'>Let's introduce our CHEFS.....</h3>
             <div className="mt-4 row row-cols-1 row-cols-md-3 g-4">
            
@@ -69,7 +71,7 @@ const Home = () => {
             chefData.map(c=> <ChefCard key={c.id} c = {c}></ChefCard>)
            }
         </div>
-        <Services></Services>
+        
         <Testimonials></Testimonials>
         </div>
         

@@ -30,12 +30,17 @@ const NavbarChef = () => {
           <Nav>
             <div className='ms-5 position-relative'>
             {
-               user &&  <img className='w-25 rounded img-thumbnail img-fluid  rounded float-end rounded-circle' src={user.photoURL}   alt="Profile"
+               user &&  <img  style={{ 
+                width: "60px", 
+                height: "55px",
+                borderRadius: "50%",
+                objectFit: "cover"
+              }} className='float-end m-4' src={user.photoURL}   alt="Profile"
                title={user.displayName}/>
                             }
 
                             {user ?
-                                <Button className='float-end mt-5 me-2' onClick={handleLogOut} variant="secondary">Logout</Button> :
+                                <Button className='float-end m-4 me-2' onClick={handleLogOut} variant="secondary">Logout</Button> :
                                 <Link to="/login">
                                     <Button variant="secondary">Login</Button>
                                 </Link>
