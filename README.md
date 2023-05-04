@@ -17,4 +17,4 @@
 
 ### Private Repo Link: [https://github.com/Porgramming-Hero-web-course/b7a9-career-hub-Nandini-Das](https://github.com/Porgramming-Hero-web-course/b7a9-career-hub-Nandini-Das)
 
-### Live site Link : [https://glittery-halva-207098.netlify.app/](https://glittery-halva-207098.netlify.app/)
+### Live site Link : [https://the-fusion-of-chef-s-recipe.web.app/](https://the-fusion-of-chef-s-recipe.web.app/)

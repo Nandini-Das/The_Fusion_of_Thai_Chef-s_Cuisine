@@ -38,7 +38,7 @@ const router = createBrowserRouter([
     {
       path:"/viewRecipes/:id",
       element: <PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
-      loader: () => fetch('http://localhost:5000/chefData/')
+      loader: ({params}) => fetch(`https://assignment-10-the-fusion-of-thai-chef-s-cuisine-ser-nandini-das.vercel.app/chefData/`)
     },
     {
       path:"/login",

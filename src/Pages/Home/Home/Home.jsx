@@ -7,7 +7,7 @@ import Testimonials from '../Testimonials/Testimonials';
 const Home = () => {
     const [chefData, setChefData] = useState([]);
     useEffect(()=>{
-     fetch('http://localhost:5000/chefData')
+     fetch('https://assignment-10-the-fusion-of-thai-chef-s-cuisine-ser-nandini-das.vercel.app/chefData')
      .then(req => req.json())
      .then(data => setChefData(data))
     }, [])
