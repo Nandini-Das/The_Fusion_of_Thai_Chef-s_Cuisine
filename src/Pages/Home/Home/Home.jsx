@@ -3,6 +3,7 @@ import ChefCard from '../chefCard/ChefCard';
 import bann from '../../../../public/bann.jpg'
 import { Carousel } from 'react-bootstrap';
 import Services from '../Services/Services';
+import Testimonials from '../Testimonials/Testimonials';
 const Home = () => {
     const [chefData, setChefData] = useState([]);
     useEffect(()=>{
@@ -69,6 +70,7 @@ const Home = () => {
            }
         </div>
         <Services></Services>
+        <Testimonials></Testimonials>
         </div>
         
     );
