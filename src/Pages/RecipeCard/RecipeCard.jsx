@@ -15,7 +15,7 @@ const RecipeCard = ({recipeAll}) => {
            recipeAll.map(recipe =>
             <div className="col">
             <div className="card">
-              <img src={recipe.recipe_img} alt="" srcset="" />
+              <img className='h-full' src={recipe.recipe_img} alt="" srcset="" />
               <div className="card-body">
                 <h3 className="card-title">{recipe.recipe_name}</h3>
                 <p className="card-text"> <span className='text-decoration-underline'> Ingredients : </span> {recipe.ingredients}</p>

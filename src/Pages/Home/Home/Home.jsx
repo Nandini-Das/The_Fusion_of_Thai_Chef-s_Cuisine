@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ChefCard from '../chefCard/ChefCard';
 import bann from '../../../../public/bann.jpg'
 import { Carousel } from 'react-bootstrap';
+import Services from '../Services/Services';
 const Home = () => {
     const [chefData, setChefData] = useState([]);
     useEffect(()=>{
@@ -67,6 +68,7 @@ const Home = () => {
             chefData.map(c=> <ChefCard key={c.id} c = {c}></ChefCard>)
            }
         </div>
+        <Services></Services>
         </div>
         
     );

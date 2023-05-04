@@ -8,9 +8,9 @@ const ChefCard = ({c}) => {
         
            
   <div className="col">
-    <div className="card">
+    <div className="card h-100">
     <LazyLoad>
-    <img height={25} className='img-fluid rounded  mx-auto d-block' src={c.chef_img}/>
+    <img height={25} className='img-fluid rounded  mx-auto d-block h-full' src={c.chef_img}/>
     </LazyLoad>
       
       <div className="card-body p-4">
