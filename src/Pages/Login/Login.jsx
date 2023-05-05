@@ -28,7 +28,7 @@ const Login = () => {
                 navigate(from, { replace: true })
             })
             .catch((error) => {
-                setError(error.message);
+                setError('Your Email/Password does not match');
               });
     }
    
