@@ -15,6 +15,6 @@
 * Use this site to see the chef's recipe and many others services
 
 
-### Private Repo Link: [https://github.com/Porgramming-Hero-web-course/b7a9-career-hub-Nandini-Das](https://github.com/Porgramming-Hero-web-course/b7a9-career-hub-Nandini-Das)
+### Private Repo Link: [https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-client-side-Nandini-Das](https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-client-side-Nandini-Das)
 
 ### Live site Link : [https://the-fusion-of-chef-s-recipe.web.app/](https://the-fusion-of-chef-s-recipe.web.app/)

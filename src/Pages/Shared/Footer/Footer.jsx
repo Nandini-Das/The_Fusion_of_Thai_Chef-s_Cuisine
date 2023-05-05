@@ -7,7 +7,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaAdn } from "react-icons/fa";
 const Footer = () => {
     return (
         <div className=' mt-4 bg-light'>
-             <div className='d-flex justify-content-around p-5'>
+             <div className='d-md-flex justify-content-around p-5'>
             <div>
                 <h3>Find us on</h3>
                 <ListGroup>
