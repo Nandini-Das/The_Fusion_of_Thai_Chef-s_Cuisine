@@ -7,8 +7,8 @@ const ChefCard = ({c}) => {
     return (
         
            
-  <div className="col">
-    <div className="card h-100">
+  <div className="col card-deck h-full">
+    <div className="card">
     <LazyLoad>
     <img height={25} className='img-fluid rounded  mx-auto d-block h-full' src={c.chef_img}/>
     </LazyLoad>

@@ -13,7 +13,7 @@ const RecipeCard = ({recipeAll}) => {
          {
            recipeAll?
            recipeAll.map(recipe =>
-            <div className="col">
+            <div className="col card-deck h-100">
             <div className="card">
               <img className='h-full' src={recipe.recipe_img} alt="" srcset="" />
               <div className="card-body">
